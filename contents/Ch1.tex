@@ -1,0 +1,54 @@
+\section{物理基础}
+
+\subsection{缓发中子}
+
+在实际裂变过程中，约有$\beta$份额的裂变中子通过缓发中子先驱核衰变而来，并在瞬发中子产生后相当长一段时间才起作用，这部分中子称为缓发中子，它们对核反应堆的周期影响很大，使得核反应堆的控制成为可能。
+
+考虑缓发中子，则中子平均寿命$\bar{l}$由瞬发中子寿命$l_0$与所有各组（通常分为6组）缓发中子寿命$(t_i + l_0)$的加权平均值，即
+
+\begin{equation}
+    \bar{l} = (1 - \beta) l_0 + \sum_{i=1}^{6} \beta_i (t_i + l_0)
+\end{equation}
+
+查${}^{235} {\rm U}$的数据，$l_0 \approx 10^{-4}\,{\rm s}$，$\displaystyle \sum_{i=1}^{6} \beta_i t_i \approx 0.1\,{\rm s}$，则$\bar{l} \approx 0.1\,{\rm s} \Rightarrow \Lambda = 0.1\,{\rm s}$。若反应性$\rho = 0.001$，则反应堆周期$T = \Lambda / \rho = 100\,{\rm s}$，即反应堆功率增加${\rm e}$倍的所需时间为$100\,{\rm s}$，完全可以使用移动控制棒的方法控制反应堆。
+
+\subsection{反应性控制}
+
+\begin{definition}[剩余反应性]
+    堆芯中没有任何控制毒物时的反应性。
+\end{definition}
+
+\begin{definition}[后备反应性]
+    冷态干净堆芯的剩余反应性。
+\end{definition}
+
+反应性控制的本质是维持堆内中子的平衡，即控制中子的产生、吸收和泄漏，具体控制手段如下。
+\begin{enumerate}
+    \item 中子吸收体移动控制：改变中子吸收率
+    \begin{enumerate}
+        \item 控制棒：控制速度快、灵活，反应性价值变化小，但对堆内中子注量率分布扰动大，对控制棒驱动机构的可靠性要求较高。
+        \item 慢化剂中可溶性毒物：不对功率分布产生过大影响，但调节较慢，浓度不能过高（参照《核反应堆物理分析》第7章）。
+        \item 可燃毒物棒：毒物含量岁燃耗加深而减小，第一循环结束时去掉。
+    \end{enumerate}
+    \item 慢化剂液位控制：改变中子产生率
+    \item 燃料控制：改变中子产生率
+    \item 反射层控制：改变中子泄漏率
+\end{enumerate}
+
+答题时，注意题目问的是“反应性控制的手段”（4种）还是“中子吸收体移动控制的手段”（3种）。
+
+\subsection{核电厂稳态运行方案}
+
+重点是冷却剂平均温度程序方案。
+\begin{enumerate}
+    \item 冷却剂平均温度随负荷成线性变化
+    \begin{equation}
+        T_{\rm av} = T_{\rm av0} + K P_{\rm H}
+    \end{equation}
+    \item 一回路或二回路的全部负担，由一回路和二回路共同承担
+    \item 应通过向堆芯深处插入控制棒组件以补偿堆芯反应性的增加
+\end{enumerate}
+
+\subsection{习题选解}
+
+本章所有习题均在上文给出了解答。

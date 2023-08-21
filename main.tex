@@ -1,0 +1,149 @@
+\documentclass[palatino, classical, simple name]{einfart}
+
+\nolinenumbers% Enable line numbers
+
+%%================================
+%% Import toolkit
+%%================================
+\usepackage{ProjLib}
+\usepackage{longtable}  % breakable tables
+\usepackage{booktabs}
+\usepackage{hologo}     % more TeX logo
+\usepackage{multicol}
+\usepackage{relsize}
+\usepackage{float}
+\usepackage{blindtext}
+\usepackage{unicode-math}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\UseLanguage{Chinese}
+
+%%================================
+%% For typesetting code
+%%================================
+\usepackage{listings}
+\definecolor{maintheme}{RGB}{70,130,180}
+\definecolor{forestgreen}{RGB}{21,122,81}
+\definecolor{lightergray}{gray}{0.99}
+\lstset{language=[LaTeX]TeX,
+    keywordstyle=\color{maintheme},
+    basicstyle=\ttfamily,
+    commentstyle=\color{forestgreen}\ttfamily,
+    stringstyle=\rmfamily,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{lightergray},
+    flexiblecolumns=true,
+    escapeinside={(*}{*)},
+    % numbers=left,
+    numberstyle=\scriptsize, stepnumber=1, numbersep=5pt,
+    % firstnumber=last,
+}
+\providecommand{\meta}[1]{$\langle${\normalfont\itshape#1}$\rangle$}
+\lstset{moretexcs=%
+    {linenumbers,nolinenumbers,part,parttext,chapter,section,subsection,subsubsection,frontmatter,mainmatter,backmatter,tableofcontents,href,
+    color,NameTheorem,CreateTheorem,cref,DNF,UseLanguage,UseOtherLanguage,AddLanguageSetting,maketitle,address,curraddr,email,keywords,subjclass,thanks,dedicatory,TheDate,ProjLib,qedhere
+    }
+}
+\lstnewenvironment{code}%
+{\setstretch{1.07}\LocallyStopLineNumbers%
+\setkeys{lst}{columns=fullflexible,keepspaces=true}%
+}
+{\ResumeLineNumbers}
+\lstnewenvironment{code*}%
+{\setstretch{1.07}\LocallyStopLineNumbers%
+\setkeys{lst}{numbers=left,columns=fullflexible,keepspaces=true}%
+}
+{\ResumeLineNumbers}
+
+%%================================
+%% tip
+%%================================
+\usepackage[many]{tcolorbox}
+\newenvironment{tip}[1][提示]{%
+    \LocallyStopLineNumbers%
+    \begin{tcolorbox}[breakable,
+        enhanced,
+        width = \textwidth,
+        colback = paper, colbacktitle = paper,
+        colframe = gray!50, boxrule=0.2mm,
+        coltitle = black,
+        fonttitle = \sffamily,
+        attach boxed title to top left = {yshift=-\tcboxedtitleheight/2, xshift=.5cm},
+        boxed title style = {boxrule=0pt, colframe=paper},
+        before skip = 0.3cm,
+        after skip = 0.3cm,
+        top = 3mm,
+        bottom = 3mm,
+        title={\scshape\sffamily #1}]%
+}{\end{tcolorbox}\ResumeLineNumbers}
+
+%%================================
+%% Names
+%%================================
+\providecommand{\minimalist}{\textsf{minimalist}}
+\providecommand{\minimart}{\textsf{minimart}}
+\providecommand{\minimbook}{\textsf{minimbook}}
+\providecommand{\einfart}{\textsf{einfart}}
+\providecommand{\simplivre}{\textsf{simplivre}}
+\numberwithin{equation}{section}
+%%================================
+%% Titles
+%%================================
+\let\LevelOneTitle\section
+\let\LevelTwoTitle\subsection
+\let\LevelThreeTitle\subsubsection
+
+%%================================
+%% Newcommand
+%%================================
+
+\newcommand{\Z}[1]{\mathcal{Z}\left[#1\right]}
+\newcommand{\ZF}[1]{{\mathcal{Z}}^{-1}\left[#1\right]}
+\newcommand{\dv}[2]{\frac{{\rm{d}}{#1}}{{\rm{d}}{#2}}}
+\newcommand{\dvn}[2]{\frac{{\rm{d}}^{#1}}{{\rm{d}}{#2}^{#1}}}
+\newcommand{\highlight}[2]{\colorbox{#1!17}{#2}}
+\newcommand{\varomega}{\symit{\omega}}
+%%================================
+%% Main text
+%%================================
+\begin{document}
+
+\title{核反应堆控制复习要点}
+\author{核工A002班 张恺}
+\email{\href{2966895623@qq.com}{2966895623@qq.com}}
+\date{\zhtoday，西安交通大学核科学与技术学院}
+
+\maketitle
+
+\begin{abstract}
+    本资料以复习提纲的形式整理了《核反应堆控制》的复习要点，给出了每一章考试涉及的重点内容，并选出部分课后习题做了解答。着重强调的内容用灰色底色提醒，即\highlight{gray}{强调的内容}；部分公式交叉引用，正文里表述“式(X.X)”中，点击编号即可跳转。本课程各类计算题的解答过程都比较繁琐，需要熟练掌握解题步骤，并细心解答。因本人水平有限，错漏之处在所难免，欢迎读者批评指正。您可以通过以下方式联系我：
+    \begin{itemize}
+        \item {\faGithub}:\,\href{https://github.com/Enriched-Uranium/Nuclear-Reactor-Control}{https://github.com/Enriched-Uranium/Nuclear-Reactor-Control}
+        \item {\faWeixin}:\,XJTU-NEer
+    \end{itemize}
+\end{abstract}
+
+\setcounter{tocdepth}{1}
+{\setstretch{1.07}\tableofcontents}
+
+
+\medskip
+
+\input{contents/Ch1.tex}
+
+\input{contents/Ch2.tex}
+
+\input{contents/Ch3.tex}
+
+\input{contents/Ch4.tex}
+
+\input{contents/Ch5.tex}
+
+\input{contents/Ch6.tex}
+
+\end{document}
+\endinput
+%%
+%% xelatex --synctex=1 main.tex

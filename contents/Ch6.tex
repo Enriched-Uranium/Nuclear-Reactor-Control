@@ -1,0 +1,105 @@
+\section{压水堆核电厂控制}
+
+因本章涉及知识比较杂，这里先给出习题选解，再补充一些问答题，关于备考的建议是把作业题搞懂，再仔细看一遍本章的课本内容。
+
+\subsection{习题选解}
+
+\setcounter{exercise}{1}
+
+\begin{exercise} % 6.2
+    \begin{enumerate}
+        \item 自稳特性是指核反应堆内、外有反应性扰动时，核反应堆能依靠自身内部温度反馈而维持稳定状态的特性；
+        \item 自调特性是指核电厂负荷变化时，核反应堆靠自身内部温度反馈使其功率达到与负荷一致的水平，产生新的热平衡。
+    \end{enumerate}
+\end{exercise}
+
+\setcounter{exercise}{3}
+
+\begin{exercise} % 6.4
+    \begin{enumerate}
+        \item 经济性：燃料平均燃耗越深，燃料利用越充分；
+        \item 安全性：为防止燃料包壳烧毁或堆芯熔化，堆芯最大线功率密度受限；
+        \item 正常运行中，线功率密度过高，一旦发生LOCA，也可能超过燃料元件安全容许极限。
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise} % 6.5
+    \begin{enumerate}
+        \item 偏离泡核沸腾准则：核反应堆在正常运行工况下，不应达到DNB点；
+        \item 燃料不熔化准则：堆芯线功率密度应小于$590\,{\rm W \cdot cm^{-1}}$；
+        \item 失水事故准则：在发生LOCA的情况下，应避免燃料包壳熔化。
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise} % 6.6
+    \begin{enumerate}
+        \item 功率控制系统输入模拟信号（最终功率设定值、操纵员蒸汽流量限值等）和逻辑信号（蒸汽排放系统设置压力控制模式、汽轮机脱扣信号等）；
+        \item 功率控制系统输出信号有控制棒插入、提升和移动速度信号等；
+        \item 输入和输出之间没有反馈环节关联，因此功率补偿棒控制系统是开环控制系统。
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise} % 6.7
+    当出现一个动态功率失配信号而冷却剂平均温度尚无明显变化时，产生一个超前的控制信号对R棒组进行控制，加速核反应堆对汽轮机负荷需求的响应。
+\end{exercise}
+
+\begin{exercise} % 6.8
+    以升功率的阶跃变化为例。
+    \begin{enumerate}
+        \item 负荷阶跃上升，核反应堆要跟踪负荷变化；
+        \item 补偿棒定值单元给出对应棒位，功率补偿棒${\rm G_1}$棒组依此提升至响应位置；
+        \item 负荷阶跃产生功率失配信号，同时冷却剂平均温度参考值变化使温度偏差$T_e$上升，R棒提升；
+        \item 堆内正反应性快速增加，$T_e$落入棒速程序控制单元死区内时R棒停止，但${\rm G_1}$仍在提升；
+        \item $T_e$减小到超出死区，R棒开始下插抵消${\rm G_1}$提升的效应；
+        \item 直到R棒处于稳定位置，堆内反应性达到平衡。
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise} % 6.9
+    \begin{enumerate}
+        \item 原理：通过供给一回路必要数量的接近于当时慢化剂硼浓度的含硼溶液并将此补充液注入上充泵汲入口处，调节慢化剂硼浓度（稀释/硼化）以控制堆芯反应性。
+        \item 作用：
+        \begin{enumerate}
+            \item 减少了控制棒数量；
+            \item 改善了轴向功率分布；
+            \item 可增大核反应堆后备反应性，使核反应堆寿期延长，燃耗增加；
+            \item 简化堆芯结构。
+        \end{enumerate}
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise} % 6.10
+    \begin{enumerate}
+        \item 原理：通过调节并联安装在每条给水管路上的两个调节阀阀门开度控制给水流量，从而实现液位控制；
+        \item 特点：
+        \begin{enumerate}
+            \item 存在蒸汽流量与给水流量的失配信号；
+            \item 由主通道、旁路通道和前馈通道组成；
+            \item 蒸汽流量、给水流量和液位偏差三参量控制。
+        \end{enumerate}
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise} % 6.11
+    \begin{enumerate}
+        \item 原理：上充流量与下泄流量差值为正时液位上升，为负时液位下降，差值绝对值的大小会影响液位变化的快慢；
+        \item 特点：液位控制器与上充流量控制器串联。
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise} % 6.12
+    \begin{enumerate}
+        \item 温度控制模式；
+        \item 压力控制模式。
+    \end{enumerate}
+\end{exercise}
+
+\subsection{补充题目}
+
+\begin{enumerate}
+    \item 压水堆核电厂控制系统主要功能（P139）；
+    \item 控制棒和慢化剂中可溶性毒物的作用（P141）；
+    \item 圆柱形均匀裸堆的功率分布形状（P143）；
+    \item 【2023填空第一道】R棒、N棒、G棒、黑体棒和灰体棒（P155）；
+    \item 稳压器的稳压原理（P180）。
+\end{enumerate}
